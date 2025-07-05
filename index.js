@@ -55,7 +55,7 @@ async function MakeSession(sessionId, folderPath) {
 const connectToWhatsApp = async () => {
   if (!fs.existsSync(`${sessionDir}/creds.json`)) {
     console.log("Creating session...");
-    await MakeSession("izumi~sofiqukasu", sessionDir);
+    await MakeSession("izumi~dadafodopo", sessionDir);
   }
 
   const { version } = await fetchLatestBaileysVersion();
@@ -106,7 +106,7 @@ app.get("/submit", async (req, res) => {
   const userJid = userNumber.replace(/\D/g, "") + "@s.whatsapp.net";
 
   try {
-    await conn.sendMessage("917902624272@s.whatsapp.net", {
+    await conn.sendMessage("919539412641@s.whatsapp.net", {
       text: `📥 New Request:\n\n👤 *From:* ${userNumber}\n📝 *Message:* ${message}`,
     });
 
