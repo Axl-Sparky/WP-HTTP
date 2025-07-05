@@ -1,30 +1,13 @@
 {
-  "name": "whatsapp-bot",
+  "name": "WP-HTTP",
   "version": "1.0.0",
-  "description": "WhatsApp Bot using wishkey-socket (Baileys fork)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [
-    "whatsapp",
-    "bot",
-    "wishkey",
-    "baileys"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "axios": "^1.6.2",
-    "pino": "^8.16.0",
-    "@whiskeysockets/baileys": "^1.2.1",
-    "dotenv": "^16.3.1",
-    "qrcode-terminal": "^0.12.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "baileys": "npm:@whiskeysockets/baileys",
+    "express": "^5.1.0",
+    "pino": "^9.7.0"
   }
 }
