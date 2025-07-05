@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const axios = require("axios");
-const { default: makeWASocket, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, useMultiFileAuthState, Browsers, DisconnectReason } = require("@whiskeysockets/baileys");
+const { default: makeWASocket, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, useMultiFileAuthState, Browsers, DisconnectReason } = require("baileys");
 const pino = require("pino");
 
 global.__basedir = __dirname;
@@ -106,7 +106,7 @@ app.get("/submit", async (req, res) => {
   const userJid = userNumber.replace(/\D/g, "") + "@s.whatsapp.net";
 
   try {
-    await conn.sendMessage("919539412641@s.whatsapp.net", {
+    await conn.sendMessage("917902624272@s.whatsapp.net", {
       text: `📥 New Request:\n\n👤 *From:* ${userNumber}\n📝 *Message:* ${message}`,
     });
 
