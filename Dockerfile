@@ -1,20 +1,6 @@
-# Use the official Node.js image
-FROM node:20-alpine
-
-# Set working directory
-WORKDIR /app
-
-# Copy package.json and package-lock.json (if present)
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy rest of the code into the container
-COPY . .
-
-# Expose the port
-EXPOSE 3000
-
-# Start the app
-CMD ["node", "index.js"]
+FROM quay.io/eypzgod/izumi:latest
+RUN git clone https://github.com/user/repo /root/req/
+WORKDIR /root/req/
+RUN yarn install --network-concurrency 1
+RUN yarn global add pm2@6.0.5
+CMD ["npm", "start"]
