@@ -96,18 +96,19 @@ const connectToWhatsApp = async () => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__path, '/public/index.html'));
 });
-app.get("/submit", async (req, res) => {
-  const { userNumber, message } = req.query;
 
-  if (!userNumber || !message) {
-    return res.status(400).json({ error: "Missing userNumber or message" });
+app.get("/submit", async (req, res) => {
+  const { userNumber } = req.query;
+
+  if (!userNumber) {
+    return res.status(400).json({ error: "Missing userNumber" });
   }
 
   const userJid = userNumber.replace(/\D/g, "") + "@s.whatsapp.net";
 
   try {
     await conn.sendMessage("919539412641@s.whatsapp.net", {
-      text: `📥 New Request:\n\n👤 *From:* ${userNumber}\n📝 *Message:* ${message}`,
+      text: `📥 New Request:\n\n👤 *From:* ${userNumber}\n📝 *Message:* Hey from sparky`,
     });
 
     await conn.sendMessage(userJid, {
