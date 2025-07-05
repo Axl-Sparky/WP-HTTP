@@ -1,16 +1,20 @@
+# Use the izumi-based Node environment
 FROM quay.io/eypzgod/izumi:latest
 
-# Clone the public repository
-RUN git clone https://github.com/Axl-Sparky/WP-HTTP /root/req/
+# Set the working directory inside the container
+WORKDIR /app
 
-# Set working directory
-WORKDIR /root/req/
+# Copy all files from your repo into the container
+COPY . .
 
 # Install dependencies
 RUN yarn install --network-concurrency 1
 
-# Install PM2 globally
+# Optional: Install PM2 globally
 RUN yarn global add pm2@6.0.5
+
+# Expose the port your app runs on
+EXPOSE 3000
 
 # Start the app
 CMD ["npm", "start"]
