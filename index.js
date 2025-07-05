@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const axios = require("axios");
-const { default: makeWASocket, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, useMultiFileAuthState, Browsers, DisconnectReason } = require("wishkey-socket");
+const { default: makeWASocket, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, useMultiFileAuthState, Browsers, DisconnectReason } = require("@whiskeysockets/baileys");
 const pino = require("pino");
 
 global.__basedir = __dirname;
